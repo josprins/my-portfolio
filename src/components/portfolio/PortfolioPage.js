@@ -12,6 +12,7 @@ const PortfolioPage = () => {
                 text="This is a sweet scrolling effect."
                 linkTo="/parallaxeffect"
                 linkName="Learn more"
+                alt="paradise"
             />
             <PortfolioCard 
                 title="Registration Form" 
@@ -19,13 +20,7 @@ const PortfolioPage = () => {
                 text="Registration or contact form."
                 linkTo="/registrationform"
                 linkName="Learn more"
-            />
-            <PortfolioCard 
-                title="SVG Animations" 
-                img={require("./images/svganimations.png")}
-                text="Using scalable vector graphics to animate images."
-                linkTo="/svganimations"
-                linkName="Learn more"
+                alt="form-img"
             />
             <PortfolioCard 
                 title="Interactive Video Player" 
@@ -33,6 +28,7 @@ const PortfolioPage = () => {
                 text="Making videos interactive."
                 linkTo="/videoplayer"
                 linkName="Learn more"
+                alt="video-player"
             />
             <PortfolioCard 
                 title="Game Show App" 
@@ -40,6 +36,7 @@ const PortfolioPage = () => {
                 text="A fun word guessing game."
                 linkTo="/gameshow"
                 linkName="Learn more"
+                alt=""
             />
             <PortfolioCard 
                 title="Todo React App" 
@@ -47,6 +44,7 @@ const PortfolioPage = () => {
                 text="An app to make your own todo list."
                 linkTo="/todoapp"
                 linkName="Learn more"
+                alt="todo-app-img"
             />
             <PortfolioCard 
                 title="Flickr API Gallery" 
@@ -54,6 +52,7 @@ const PortfolioPage = () => {
                 text="A photo gallery using the FlickR API."
                 linkTo="/flickrgallery"
                 linkName="Learn more"
+                alt="flickr-gallery-img"
             />                       
         </div>
     );

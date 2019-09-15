@@ -1,29 +1,60 @@
 import React from 'react';
-import Navigation from './Navigation'
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
-import 'animate.css/animate.css';
+import { Link } from 'react-router-dom'
 
-AOS.init()
+class Home extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+      text:"Hi, I'm Jos. I'm a front-end web developer.",
+        count:0,
+        show:"",
+      }
+      this.update = this.update.bind(this);
+    }
+    
+    componentDidMount() {
+      this.timerID = setInterval(
+        () => this.update(),
+        100
+      );
+    }
+    
+    componentWillUnmount() {
+      clearInterval(this.timerID);
+    }
+    
+    
+    update(){
+      const counter = this.state.count;
+      const letter = this.state.text.charAt(counter);
+      const textlength = this.state.text.length;
+      //let text += letter;
+      
+      if(counter <= textlength){
+      this.setState({
+        show: this.state.show + letter,
+        count: this.state.count + 1,
+      });
+      }else{
+        clearInterval(this.timerID);
+      }
+    }
+  
+    render() {
+      return (
+        <main>
+            <div className="home-container">
+                <h1>{this.state.show}</h1>
+            </div>
+            <div className="home-btn">
+              <div className="centerer">
+                <Link to="/portfoliopage">See my latest work</Link>
+              </div>
+                
+            </div> 
+        </main>
+      );
+    }
+  }
 
-
-
-const Home = () => {
-    return (
-        <div>
-            <Navigation />
-            <main>
-                <h1 className="home-animate-1">Commodo culpa eu laborum amet ea officia nisi eiusmod ut duis.</h1>
-                <p className="home-animate-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?</p>
-                <h1 data-aos="fade-up">Commodo culpa eu laborum amet ea officia nisi eiusmod ut duis.</h1>
-                <p data-aos="fade-up">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?</p>
-                <h1 data-aos="fade-up">Commodo culpa eu laborum amet ea officia nisi eiusmod ut duis.</h1>
-                <p data-aos="fade-up">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?</p>
-                <h1 data-aos="fade-up">Commodo culpa eu laborum amet ea officia nisi eiusmod ut duis.</h1>
-                <p data-aos="fade-up">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi fuga dolor ullam sint quis veniam vel suscipit, autem modi, animi a laboriosam laudantium sed tenetur repellendus, sit explicabo quos pariatur?</p>               
-            </main>
-        </div>
-    );
-};
-
-export default Home;
+  export default Home; 
