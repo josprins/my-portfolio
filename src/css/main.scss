@@ -151,6 +151,19 @@ h3 {
   }
 
 // *** Home Page ***
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 .home-container {
   width: 80%;
   margin-left: 10%;
@@ -165,7 +178,9 @@ h3 {
   display: flex;
 }
 
-
+.home-btn {
+  animation: fadeIn 5s ease-in;
+}
 
 .home-btn a {
   text-align: center;

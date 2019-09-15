@@ -162,6 +162,30 @@ h3 {
   }
 }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .home-container {
   width: 80%;
   margin-left: 10%;
@@ -176,6 +200,11 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.home-btn {
+  -webkit-animation: fadeIn 5s ease-in;
+          animation: fadeIn 5s ease-in;
 }
 
 .home-btn a {
